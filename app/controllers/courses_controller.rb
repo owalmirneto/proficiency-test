@@ -30,6 +30,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    @course.destroy
+    redirect_to courses_path, flash: { success: 'Curso apgado com sucesso' }
+  end
+
   private
 
     def set_course
