@@ -1,0 +1,6 @@
+pt-BR:
+  enumerations:
+    student_status:
+      wait: 'Em formação'
+      open: 'Aberta'
+      closed: 'Fechado'
