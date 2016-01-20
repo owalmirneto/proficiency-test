@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to students_path, flash: { success: 'Curso salvo com sucesso' }
+      redirect_to students_path, flash: { success: 'Aluno salvo com sucesso' }
     else
       render :new
     end
@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      redirect_to students_path, flash: { success: 'Curso salvo com sucesso' }
+      redirect_to students_path, flash: { success: 'Aluno salvo com sucesso' }
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    redirect_to students_path, flash: { success: 'Curso apgado com sucesso' }
+    redirect_to students_path, flash: { success: 'Aluno apgado com sucesso' }
   end
 
   private
