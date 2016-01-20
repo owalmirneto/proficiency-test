@@ -20,6 +20,8 @@ gem 'pg', '~> 0.17.1'
 
 gem 'puma'
 
+gem 'bower-rails', '~> 0.10.0'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize-scss', '~> 3.0.1'
   gem 'rails-assets-stylish-scss', '~> 0.0.5'
