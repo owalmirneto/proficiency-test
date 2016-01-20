@@ -1,11 +1,12 @@
 pt-BR:
   activerecord:
     models:
-      account_category:
-        one: Categoria
-        other: Categorias
+      student:
+        one: Aluno
+        other: Alunos
 
     attributes:
-      account_category:
+      student:
         name: Nome
+        register_number: Matricula
         status: Situação
