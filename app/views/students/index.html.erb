@@ -1,4 +1,4 @@
-<h3 class="page-header"><%= tm @students, 2 %></h3>
+<h3 class="page-header"><%= tmp Student %></h3>
 
 <div class="row">
   <div class="col-md-12">
@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-xs-10 col-sm-8">
             <h4 class="no-margin">
-              <%= fa_icon :users %> Ver todos
+              <%= fa_icon :list %> todos
             </h4>
           </div>
           <div class="col-xs-2 col-sm-4 text-right">
@@ -22,7 +22,8 @@
           <table class="table no-margin">
             <thead>
               <tr>
-                <th>Nome <small>(sigla)</small></th>
+                <th><%= ta Student, :name %> <small>(<%= ta Student, :register_number %>)</small></th>
+                <th width="200"><%= ta Student, :status %></th>
                 <th width="100" class="text-right">Ações</th>
               </tr>
             </thead>
@@ -32,7 +33,12 @@
                   <td>
                     <h5>
                       <div><%= student.name %></div>
-                      <small><%= student.description %></small>
+                      <small><%= student.register_number %></small>
+                    </h5>
+                  </td>
+                  <td>
+                    <h5>
+                      <div><%= student.status_label %></div>
                     </h5>
                   </td>
                   <td>
@@ -52,7 +58,7 @@
             </tbody>
           </table>
         <% else %>
-          <%= bs_alert :info, 'Nenhum estudante encontrado' %>
+          <%= not_found_message @students %>, <%= link_to 'clique aqui para adicionar', new_student_path %>
         <% end %>
       </div>
     </div>

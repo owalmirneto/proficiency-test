@@ -2,14 +2,14 @@
 <%= render 'shared/form_errors_messages', resource: @course %>
 
 <div class="row">
-  <div class="col-xs-8">
+  <div class="col-sm-8">
     <div class="form-group">
       <%= f.label :name, 'Nome*' %>
       <%= f.text_field :name, class: 'form-control', placeholder: 'Nome do curso' %>
     </div>
   </div>
 
-  <div class="col-xs-4">
+  <div class="col-sm-4">
     <div class="form-group">
       <%= f.label :status, 'Situação*' %>
       <%= f.select :status, enumaration_to_options(CourseStatus), {}, class: 'chosen' %>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-sm-12">
     <div class="form-group">
       <%= f.label :description, 'Descrição' %>
       <%= f.text_field :description, class: 'form-control', placeholder: 'Descrição do curso' %>

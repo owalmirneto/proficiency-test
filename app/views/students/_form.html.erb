@@ -1,0 +1,32 @@
+<%= form_for @student do |f| %>
+<%= render 'shared/form_errors_messages', resource: @student %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <%= f.label :name, 'Nome*' %>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Nome do aluno' %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :register_number, 'Matricula*' %>
+      <%= f.text_field :register_number, class: 'form-control', placeholder: 'Matricula do aluno' %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :status, 'Situação*' %>
+      <%= f.select :status, enumaration_to_options(StudentStatus), {}, class: 'chosen' %>
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-sm btn-block btn-primary">
+  <%= fa_icon :save %> Salvar <%= tm Student %>
+</button>
+<% end %>
