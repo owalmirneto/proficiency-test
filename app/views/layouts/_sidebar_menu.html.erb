@@ -1,5 +1,12 @@
 <ul class="nav nav-sidebar">
-  <li class="dropdown-header"><%= fa_icon :users %> <%= tmp Classroom %></li>
+  <li>
+    <%= link_to root_path do %>
+      <%= fa_icon :dashboard, class: 'text-muted' %> Dashboard
+    <% end %>
+  </li>
+</ul>
+<ul class="nav nav-sidebar">
+  <li class="dropdown-header"><%= fa_icon :'user-plus' %> <%= tmp Classroom %></li>
   <li>
     <%= link_to new_classroom_path do %>
       <%= fa_icon :plus, class: 'text-muted' %> Adicionar

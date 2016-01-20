@@ -1,0 +1,37 @@
+<table class="table no-margin">
+  <thead>
+    <tr>
+      <th><%= ta Classroom, :student_id %> <small>(<%= ta Classroom, :course_id %>)</small></th>
+      <th width="200" class="text-center"><%= ta Classroom, :created_at %></th>
+      <th width="100" class="text-right">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td>
+          <h5>
+            <div><%= classroom.student_name %></div>
+            <small><%= classroom.course_name %></small>
+          </h5>
+        </td>
+        <td class="text-center">
+          <h5>
+            <span class="bs-tooltip" title="<%= classroom.created_datetime %>">
+              <%= classroom.created_date %>
+            </span>
+          </h5>
+        </td>
+        <td>
+          <div class="text-right">
+            <span class="text-danger bs-tooltip" data-title="cancelar" data-toggle="modal" data-target="#classroom_destroy_<%= classroom.id %>">
+              <%= fa_icon :ban %>
+            </span>
+          </div>
+
+          <%= bs_modal_confirm_destroy "classroom_destroy_#{classroom.id}", classroom_path(classroom) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

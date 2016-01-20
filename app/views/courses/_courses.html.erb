@@ -1,0 +1,38 @@
+<table class="table no-margin">
+  <thead>
+    <tr>
+      <th><%= ta Course, :name %> <small>(<%= ta Course, :description %>)</small></th>
+      <th width="200"><%= ta Course, :status %></th>
+      <th width="100" class="text-right">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td>
+          <h5>
+            <div><%= course.name %></div>
+            <small><%= course.description %></small>
+          </h5>
+        </td>
+        <td>
+          <h5>
+            <div><%= course.status_label %></div>
+          </h5>
+        </td>
+        <td>
+          <div class="text-right">
+            <%= link_to edit_course_path(course), class: 'text-info bs-tooltip', title: :editar do %>
+              <%= fa_icon 'pencil' %>
+            <% end %>
+            <span class="text-danger bs-tooltip" data-title="apagar" data-toggle="modal" data-target="#course_destroy_<%= course.id %>">
+              <%= fa_icon 'times' %>
+            </span>
+          </div>
+
+          <%= bs_modal_confirm_destroy "course_destroy_#{course.id}", course_path(course) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

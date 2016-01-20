@@ -2,10 +2,16 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%= render 'classrooms' %>
+    <h2 class="sub-header">Últimas matrículas</h2>
+    <div class="table-responsive">
+      <%= render 'classrooms/classrooms' %>
+    </div>
   </div>
 
   <div class="col-md-6">
-    <%= render 'courses' %>
+    <h2 class="sub-header">Últimos cursos</h2>
+    <div class="table-responsive">
+      <%= render 'courses/courses' %>
+    </div>
   </div>
 </div>
