@@ -66,6 +66,10 @@ group :development, :test do
 
   gem 'awesome_print'
   gem 'pry-rails'
+
+  # Environment vars
+  # https://github.com/bkeepers/dotenv
+  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
 end
 
 group :test do
