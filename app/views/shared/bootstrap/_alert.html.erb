@@ -1,0 +1,7 @@
+<div class="alert fade in alert-<%= type %>">
+  <span class="close" data-dismiss="alert"><%= fa_icon 'times' %></span>
+  <% if subtitle.present? %>
+    <b><%= subtitle.capitalize %>!</b> <br />
+  <% end %>
+  <%= message %>
+</div>
