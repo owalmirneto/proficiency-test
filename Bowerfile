@@ -1,2 +1,6 @@
 asset 'bootstrap', '~3.3.6'
 asset 'font-awesome', '~4.5.0'
+asset 'chosen', '~1.4.2'
+asset 'bootstrap-chosen', '~1.0.1'
+asset 'eonasdan-bootstrap-datetimepicker', '~4.17.37'
+asset 'jquery-meiomask', '~1.1.14'
