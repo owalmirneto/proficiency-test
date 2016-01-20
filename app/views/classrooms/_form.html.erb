@@ -1,0 +1,32 @@
+<%= form_for @classroom do |f| %>
+<%= render 'shared/form_errors_messages', resource: @classroom %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <%= f.label :student_id %>
+      <%= f.collection_select :student_id, @students, :id, :name, { include_blank: true }, class: 'chosen' %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :course_id %>
+      <%= f.collection_select :course_id, @courses, :id, :name, { include_blank: true }, class: 'chosen' %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= f.label :entry_at %>
+      <%= f.text_field :entry_at, class: 'form-control bs-datepicker' %>
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-sm btn-block btn-primary">
+  <%= fa_icon :save %> Salvar <%= tm Classroom %>
+</button>
+<% end %>

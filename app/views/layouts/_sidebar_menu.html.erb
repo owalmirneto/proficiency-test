@@ -1,10 +1,18 @@
 <ul class="nav nav-sidebar">
-  <li class="dropdown-header"><%= fa_icon :edit %> Matrícula</li>
-  <li><a href="#"><%= fa_icon :plus, class: 'text-muted' %> Adicionar</a></li>
-  <li><a href="#"><%= fa_icon :list, class: 'text-muted' %> Ver todas</a></li>
+  <li class="dropdown-header"><%= fa_icon :users %> <%= tmp Classroom %></li>
+  <li>
+    <%= link_to new_classroom_path do %>
+      <%= fa_icon :plus, class: 'text-muted' %> Adicionar
+    <% end %>
+  </li>
+  <li>
+    <%= link_to classrooms_path do %>
+      <%= fa_icon :list, class: 'text-muted' %> Ver todas
+    <% end %>
+  </li>
 </ul>
 <ul class="nav nav-sidebar">
-  <li class="dropdown-header"><%= fa_icon :users %> <%= tm Student, 2 %></li>
+  <li class="dropdown-header"><%= fa_icon :users %> <%= tmp Student %></li>
   <li>
     <%= link_to new_student_path do %>
       <%= fa_icon :plus, class: 'text-muted' %> Adicionar
@@ -17,7 +25,7 @@
   </li>
 </ul>
 <ul class="nav nav-sidebar">
-  <li class="dropdown-header"><%= fa_icon :flag %> <%= tm Course, 2 %></li>
+  <li class="dropdown-header"><%= fa_icon :flag %> <%= tmp Course %></li>
   <li>
     <%= link_to new_course_path do %>
       <%= fa_icon :plus, class: 'text-muted' %> Adicionar

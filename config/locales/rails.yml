@@ -210,8 +210,7 @@ pt-BR:
     errors:
       <<: *errors
 
-  general:
+  app:
     not_found:
       male: "Nenhum %{model_name} foi encontrado"
       female: "Nenhuma %{model_name} foi encontrada"
-    success: "%{model_name} foi salvo com sucesso"

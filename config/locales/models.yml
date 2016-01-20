@@ -7,6 +7,9 @@ pt-BR:
       course:
         one: Curso
         other: Cursos
+      classroom:
+        one: Matricula
+        other: Matriculas
 
     attributes:
       student:
@@ -14,6 +17,10 @@ pt-BR:
         register_number: Matricula
         status: Situação
       course:
+        name: Nome
+        description: Descrição
+        status: Situação
+      classroom:
         name: Nome
         description: Descrição
         status: Situação

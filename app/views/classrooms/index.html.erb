@@ -1,4 +1,4 @@
-<h3 class="page-header"><%= tmp Student %></h3>
+<h3 class="page-header"><%= tmp Classroom %></h3>
 
 <div class="row">
   <div class="col-md-12">
@@ -7,58 +7,58 @@
         <div class="row">
           <div class="col-xs-10 col-sm-8">
             <h4 class="no-margin">
-              <%= fa_icon :list %> todos
+              <%= fa_icon :list %> todas
             </h4>
           </div>
           <div class="col-xs-2 col-sm-4 text-right">
-            <%= link_to new_student_path, class: 'btn btn-xs btn-primary', title: :adicionar do %>
+            <%= link_to new_classroom_path, class: 'btn btn-xs btn-primary', title: :adicionar do %>
               <%= fa_icon :plus %> <span class="hidden-xs">adicionar</span>
             <% end %>
           </div>
         </div>
       </div>
       <div class="panel-body">
-        <% if @students.present? %>
+        <% if @classrooms.present? %>
           <table class="table no-margin">
             <thead>
               <tr>
-                <th><%= ta Student, :name %> <small>(<%= ta Student, :register_number %>)</small></th>
-                <th width="200"><%= ta Student, :status %></th>
+                <th><%= ta Classroom, :name %> <small>(<%= ta Classroom, :description %>)</small></th>
+                <th width="200"><%= ta Classroom, :status %></th>
                 <th width="100" class="text-right">Ações</th>
               </tr>
             </thead>
             <tbody>
-              <% @students.each do |student| %>
+              <% @classrooms.each do |classroom| %>
                 <tr>
                   <td>
                     <h5>
-                      <div><%= student.name %></div>
-                      <small><%= student.register_number %></small>
+                      <div><%= classroom.name %></div>
+                      <small><%= classroom.description %></small>
                     </h5>
                   </td>
                   <td>
                     <h5>
-                      <div><%= student.status_label %></div>
+                      <div><%= classroom.status_label %></div>
                     </h5>
                   </td>
                   <td>
                     <div class="text-right">
-                      <%= link_to edit_student_path(student), class: 'text-info bs-tooltip', title: :editar do %>
+                      <%= link_to edit_classroom_path(classroom), class: 'text-info bs-tooltip', title: :editar do %>
                         <%= fa_icon 'pencil' %>
                       <% end %>
-                      <span class="text-danger bs-tooltip" data-title="apagar" data-toggle="modal" data-target="#student_destroy_<%= student.id %>">
+                      <span class="text-danger bs-tooltip" data-title="apagar" data-toggle="modal" data-target="#classroom_destroy_<%= classroom.id %>">
                         <%= fa_icon 'times' %>
                       </span>
                     </div>
 
-                    <%= bs_modal_confirm_destroy "student_destroy_#{student.id}", student_path(student) %>
+                    <%= bs_modal_confirm_destroy "classroom_destroy_#{classroom.id}", classroom_path(classroom) %>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
         <% else %>
-          <%= not_found_message Student %>, <%= link_to 'clique aqui para adicionar', new_student_path %>
+          <%= not_found_message Classroom, :female %>, <%= link_to 'clique aqui para adicionar', new_classroom_path %>
         <% end %>
       </div>
     </div>
