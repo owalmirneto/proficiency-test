@@ -4,7 +4,7 @@
   <li><a href="#"><%= fa_icon :list, class: 'text-muted' %> Ver todas</a></li>
 </ul>
 <ul class="nav nav-sidebar">
-  <li class="dropdown-header"><%= fa_icon :users %> Alunos</li>
+  <li class="dropdown-header"><%= fa_icon :users %> <%= tm Student, 2 %></li>
   <li>
     <%= link_to new_student_path do %>
       <%= fa_icon :plus, class: 'text-muted' %> Adicionar
@@ -12,6 +12,19 @@
   </li>
   <li>
     <%= link_to students_path do %>
+      <%= fa_icon :list, class: 'text-muted' %> Ver todos
+    <% end %>
+  </li>
+</ul>
+<ul class="nav nav-sidebar">
+  <li class="dropdown-header"><%= fa_icon :users %> <%= tm Course, 2 %></li>
+  <li>
+    <%= link_to new_course_path do %>
+      <%= fa_icon :plus, class: 'text-muted' %> Adicionar
+    <% end %>
+  </li>
+  <li>
+    <%= link_to courses_path do %>
       <%= fa_icon :list, class: 'text-muted' %> Ver todos
     <% end %>
   </li>

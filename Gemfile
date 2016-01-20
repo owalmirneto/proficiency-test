@@ -20,7 +20,13 @@ gem 'pg', '~> 0.17.1'
 
 gem 'puma'
 
+# Bower for rails
+# https://github.com/rharriso/bower-rails
 gem 'bower-rails', '~> 0.10.0'
+
+# Decorators
+# https://github.com/drapergem/draper
+gem 'draper', '~> 2.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-normalize-scss', '~> 3.0.1'

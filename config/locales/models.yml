@@ -4,9 +4,16 @@ pt-BR:
       student:
         one: Aluno
         other: Alunos
+      course:
+        one: Curso
+        other: Cursos
 
     attributes:
       student:
         name: Nome
         register_number: Matricula
+        status: Situação
+      course:
+        name: Nome
+        description: Descrição
         status: Situação

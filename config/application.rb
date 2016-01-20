@@ -21,5 +21,6 @@ module ProficiencyTest
     config.i18n.default_locale = 'pt-BR'
 
     config.autoload_paths << "#{Rails.root}/app/enumerations"
+    config.autoload_paths << "#{Rails.root}/app/decorators"
   end
 end

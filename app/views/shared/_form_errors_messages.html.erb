@@ -1,0 +1,14 @@
+<% if resource.errors.present? %>
+<div class="alert alert-danger fade in">
+  <i class="close" data-dismiss="alert"><%= fa_icon 'times' %></i>
+  <b>Ops! Ocorreu algum erro:</b>
+
+  <% if resource.errors.any? %>
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li> * <%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<% end %>
