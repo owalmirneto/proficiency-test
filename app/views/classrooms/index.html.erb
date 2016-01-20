@@ -22,8 +22,8 @@
           <table class="table no-margin">
             <thead>
               <tr>
-                <th><%= ta Classroom, :name %> <small>(<%= ta Classroom, :description %>)</small></th>
-                <th width="200"><%= ta Classroom, :status %></th>
+                <th><%= ta Classroom, :student_id %> <small>(<%= ta Classroom, :course_id %>)</small></th>
+                <th width="200" class="text-center"><%= ta Classroom, :created_at %></th>
                 <th width="100" class="text-right">Ações</th>
               </tr>
             </thead>
@@ -32,21 +32,20 @@
                 <tr>
                   <td>
                     <h5>
-                      <div><%= classroom.name %></div>
-                      <small><%= classroom.description %></small>
+                      <div><%= classroom.student_name %></div>
+                      <small><%= classroom.course_name %></small>
                     </h5>
                   </td>
-                  <td>
+                  <td class="text-center">
                     <h5>
-                      <div><%= classroom.status_label %></div>
+                      <span class="bs-tooltip" title="<%= classroom.created_datetime %>">
+                        <%= classroom.created_date %>
+                      </span>
                     </h5>
                   </td>
                   <td>
                     <div class="text-right">
-                      <%= link_to edit_classroom_path(classroom), class: 'text-info bs-tooltip', title: :editar do %>
-                        <%= fa_icon 'pencil' %>
-                      <% end %>
-                      <span class="text-danger bs-tooltip" data-title="apagar" data-toggle="modal" data-target="#classroom_destroy_<%= classroom.id %>">
+                      <span class="text-danger bs-tooltip" data-title="cancelar matricula" data-toggle="modal" data-target="#classroom_destroy_<%= classroom.id %>">
                         <%= fa_icon 'times' %>
                       </span>
                     </div>

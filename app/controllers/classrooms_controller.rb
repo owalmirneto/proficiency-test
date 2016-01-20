@@ -1,4 +1,5 @@
 class ClassroomsController < ApplicationController
+  before_action :set_depence_for_form, only: [ :new, :create, :edit, :update ]
   before_action :set_classroom, only: [ :edit, :update, :show, :destroy ]
 
   def index
@@ -6,8 +7,6 @@ class ClassroomsController < ApplicationController
   end
 
   def new
-    @students = Student.all
-    @courses = Course.all
     @classroom = Classroom.new
   end
 
@@ -15,29 +14,23 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(classroom_params)
 
     if @classroom.save
-      redirect_to classrooms_path, flash: { success: 'Curso salvo com sucesso' }
+      redirect_to classrooms_path, flash: { success: 'Matricula salva com sucesso' }
     else
       render :new
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @classroom.update(classroom_params)
-      redirect_to classrooms_path, flash: { success: 'Curso salvo com sucesso' }
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @classroom.destroy
-    redirect_to classrooms_path, flash: { success: 'Curso apgado com sucesso' }
+    redirect_to classrooms_path, flash: { success: 'Matricula cancelada com sucesso' }
   end
 
   private
+
+    def set_depence_for_form
+      @students = Student.all
+      @courses = Course.all
+    end
 
     def set_classroom
       @classroom = Classroom.find_by_id(params[:id])
@@ -45,6 +38,6 @@ class ClassroomsController < ApplicationController
     end
 
     def classroom_params
-      params.require(:classroom).permit(:name, :status, :description)
+      params.require(:classroom).permit(:student_id, :course_id)
     end
 end

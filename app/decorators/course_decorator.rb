@@ -1,7 +1,7 @@
 class CourseDecorator < Draper::Decorator
   delegate_all
 
-  def status_label format='%d/%m/%Y'
+  def status_label
     class_name = if object.status_wait?
       'info'
     elsif object.status_open?

@@ -1,17 +1,23 @@
 class ClassroomDecorator < Draper::Decorator
   delegate_all
 
-  def status_label format='%d/%m/%Y'
-    class_name = if object.status_wait?
-      'info'
-    elsif object.status_open?
-      'success'
-    elsif object.status_closed?
-      'danger'
-    else
-      'default'
-    end
+  def course_name
+    object.course.name if object.course
+  end
 
-    h.content_tag :span, object.status_humanize, class: "label label-#{class_name}"
+  def student_name
+    object.student.name if object.student
+  end
+
+  def created_date
+    created_format
+  end
+
+  def created_datetime
+    created_format('%d/%m/%Y às %H:%M:%S')
+  end
+
+  def created_format format='%d/%m/%Y'
+    object.created_at.strftime(format) if object.created_at
   end
 end

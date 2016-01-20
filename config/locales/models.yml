@@ -21,6 +21,6 @@ pt-BR:
         description: Descrição
         status: Situação
       classroom:
-        name: Nome
-        description: Descrição
-        status: Situação
+        student_id: Aluno
+        course_id: Curso
+        created_at: Data da matricula
