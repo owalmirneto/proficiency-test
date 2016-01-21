@@ -33,6 +33,8 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     redirect_to courses_path, flash: { success: 'Curso apgado com sucesso' }
+  rescue
+    redirect_to students_path, flash: { error: 'Curso não pode ser apagado, porque tem em um ou mais alunos matriculados' }
   end
 
   private

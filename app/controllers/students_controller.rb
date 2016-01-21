@@ -32,7 +32,9 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    redirect_to students_path, flash: { success: 'Aluno apgado com sucesso' }
+    redirect_to students_path, flash: { success: 'Aluno apagado com sucesso' }
+  rescue
+    redirect_to students_path, flash: { error: 'Aluno não pode ser apagado, porque está matriculado em um ou mais cursos' }
   end
 
   private
