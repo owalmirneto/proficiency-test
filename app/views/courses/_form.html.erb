@@ -12,7 +12,7 @@
   <div class="col-sm-4">
     <div class="form-group">
       <%= f.label :status, 'Situação*' %>
-      <%= f.select :status, enumaration_to_options(CourseStatus), {}, class: 'chosen' %>
+      <%= f.select :status, CourseStatus.to_a, {}, class: 'chosen' %>
     </div>
   </div>
 </div>

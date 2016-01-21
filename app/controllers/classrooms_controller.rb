@@ -28,8 +28,8 @@ class ClassroomsController < ApplicationController
   private
 
     def set_form_dependencies
-      @students = Student.all
-      @courses = Course.all
+      @students = Student.where.not(status: StudentStatus::INACTIVE)
+      @courses = Course.where.not(status: CourseStatus::CLOSED)
     end
 
     def set_classroom
