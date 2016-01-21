@@ -1,5 +1,5 @@
 class ClassroomsController < ApplicationController
-  before_action :set_depence_for_form, only: [ :new, :create, :edit, :update ]
+  before_action :set_form_dependencies, only: [ :new, :create, :edit, :update ]
   before_action :set_classroom, only: [ :edit, :update, :show, :destroy ]
 
   def index
@@ -27,7 +27,7 @@ class ClassroomsController < ApplicationController
 
   private
 
-    def set_depence_for_form
+    def set_form_dependencies
       @students = Student.all
       @courses = Course.all
     end
