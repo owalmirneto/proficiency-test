@@ -214,3 +214,10 @@ pt-BR:
     not_found:
       male: "Nenhum %{model_name} foi encontrado"
       female: "Nenhuma %{model_name} foi encontrada"
+    flash_message:
+      success: 'Sucesso'
+      warning: 'Aviso'
+      error: 'Erro'
+      notice: 'Aviso'
+      info: 'Info'
+      alert: 'Info'

@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to courses_path, flash: { success: 'Curso salvo com sucesso' }
+      redirect_to courses_path, flash: { success: 'Curso cadastrado com sucesso' }
     else
       render :new
     end
@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to courses_path, flash: { success: 'Curso salvo com sucesso' }
+      redirect_to courses_path, flash: { success: 'Curso alterado com sucesso' }
     else
       render :edit
     end
